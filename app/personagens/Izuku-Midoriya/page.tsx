@@ -14,8 +14,8 @@ export default function IzukuMidoriya() {
         <div className="w-full sm:w-1/2 lg:w-1/5 p-[20px]">
           {/* Side Info */}
           <div className="border border-black rounded-t-[20px] rounded-b-[10px]">
-            <div className="flex bg-red-500 h-[40px] justify-center items-center rounded-t-[20px]">
-              <p>Izuku Midoriya</p>
+            <div className="flex bg-red-500 h-[40px] justify-center items-center rounded-t-[20px] border-b border-black">
+              <p className="text-[25px]">Izuku Midoriya</p>
             </div>
             <div className="flex h-[250px] justify-center items-center">
               <Image src={PoseidonImage} alt="" className="object-cover w-full h-full" />
@@ -142,17 +142,27 @@ export default function IzukuMidoriya() {
 
         {/* Bloco 2 */}
         <div className="flex w-full sm:w-1/2 lg:w-4/5 p-[20px] justify-center">
-          <div className="bg-white w-[80%] p-[20px]">
-            <h1 className="text-[40px]">Izuku Midoriya</h1>
-            <div className="flex gap-[10px]">
-              {["Visão geral", "Galeria", "Relacionamentos", "Aparição"].map((label, index) => (
-                <button
-                  key={index}
-                  className="relative px-4 py-2 text-black after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-purple-600 after:transition-all after:duration-300 hover:after:w-full"
-                >
-                  {label}
-                </button>
-              ))}
+          <div className="flex flex-col rounded-[10px] bg-white w-[80%] p-[20px] gap-[40px]">
+            <div className="flex flex-col gap-[20px]">
+              <h1 className="text-[40px]">Izuku Midoriya</h1>
+              <div className="flex gap-[10px] border-b border-gray">
+                {["Visão geral", "Galeria", "Relacionamentos", "Aparição"].map((label, index) => (
+                  <button
+                    key={index}
+                    className="relative px-4 py-2 text-black after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#EBD6FB] after:transition-all after:duration-300 hover:after:w-full"
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div className="flex flex-col w-[60%] p-[20px] bg-[#FEEBF6] border-l-[5px] border-[#EBD6FB] gap-[10px] italic">
+              <div>
+                <p>"Não estou aqui para fazer amigos. Estou aqui para mudar o mundo, mesmo que tenha que queimá-lo primeiro."</p>
+              </div>
+              <div className="flex justify-end">
+                <p>— Tyler, Temporada 2, Episódio 7</p>
+              </div>
             </div>
           </div>
         </div>
