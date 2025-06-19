@@ -2,22 +2,25 @@ import Image from "next/image";
 import Header from "../../components/Header/page";
 
 import RebeccaImage from "../../../public/rebeccaImage1.jpg"
+import ZeusImage from "../../../public/zeusImage1.webp"
+import PoseidonImage from "../../../public/poseidonImage1.webp"
 
 export default function IzukuMidoriya() {
   return (
     <div>
       <Header />
-      <main className="flex flex-col sm:flex-row flex-wrap w-full border-4 border-red-600 h-auto">
+      <main className="flex flex-col sm:flex-row flex-wrap w-full bg-[#FEEBF6]">
         {/* Bloco 1 */}
-        <div className="w-full sm:w-1/2 lg:w-1/5 bg-red-300 p-4">
-          <div className="border rounded-t-[20px] rounded-b-[10px]">
+        <div className="w-full sm:w-1/2 lg:w-1/5 p-[20px]">
+          {/* Side Info */}
+          <div className="border border-black rounded-t-[20px] rounded-b-[10px]">
             <div className="flex bg-red-500 h-[40px] justify-center items-center rounded-t-[20px]">
               <p>Izuku Midoriya</p>
             </div>
-            <div className="flex bg-blue-500 h-[250px] justify-center items-center">
-              {/* <Image src={RebeccaImage} alt="" className="object-cover w-full h-full" /> */}
+            <div className="flex h-[250px] justify-center items-center">
+              <Image src={PoseidonImage} alt="" className="object-cover w-full h-full" />
             </div>
-            <div className="">
+            <div className="bg-[#FCD8CD]">
               <p className="flex bg-red-500 h-[35px] justify-center items-center">Identidade</p>
 
               <div className="flex w-[100%]">
@@ -134,14 +137,26 @@ export default function IzukuMidoriya() {
 
             </div>
           </div>
+
         </div>
 
         {/* Bloco 2 */}
-        <div className="flex w-full sm:w-1/2 lg:w-4/5 bg-blue-300 p-4 justify-center">
-          <div className="bg-white w-[80%]">
-            <p>textp</p>
+        <div className="flex w-full sm:w-1/2 lg:w-4/5 p-[20px] justify-center">
+          <div className="bg-white w-[80%] p-[20px]">
+            <h1 className="text-[40px]">Izuku Midoriya</h1>
+            <div className="flex gap-[10px]">
+              {["Visão geral", "Galeria", "Relacionamentos", "Aparição"].map((label, index) => (
+                <button
+                  key={index}
+                  className="relative px-4 py-2 text-black after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-purple-600 after:transition-all after:duration-300 hover:after:w-full"
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
+
       </main>
     </div>
   );
