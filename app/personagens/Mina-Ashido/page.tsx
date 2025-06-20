@@ -2,6 +2,7 @@ import Header from "../../components/Header/page";
 import CharacterProfile from "../../components/CharacterProfile/page";
 
 import PoseidonImage from "../../../public/poseidonImage1.webp";
+import IzukuMidoriyaImage from "../../../public/izukuMidoriyaImage1.jpg";
 
 export default function MinaAshido() {
   return (
@@ -17,44 +18,85 @@ export default function MinaAshido() {
             status="Vivo"
             affiliation="E.N.A"
             appearance={{ skinTone: "Branca", eyeColor: "Verdes" }}
-            image={PoseidonImage}
-            quote="texto"
+            image={IzukuMidoriyaImage}
+            quote="Se você tem medo de mim… é porque ainda não dançou comigo."
             quoteSource="Mina Ashido"
             sections={[
+                // da para por mais, o último não precisa de virgula
+                // Visão Geral
                 {
                 id: "visao-geral",
                 title: "Visão Geral",
-                content: <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia rem quos quis debitis ipsum, enim odio officiis, optio laudantium nostrum vel in expedita quidem a provident error quae consequatur cumque.
-                Cumque nulla, ut obcaecati repellat vel cupiditate quam eaque ipsa esse cum ex autem. Veritatis necessitatibus illum aspernatur quisquam natus suscipit, eveniet ullam neque, sequi laudantium sed quas deserunt dignissimos?
-                Adipisci omnis deleniti velit molestias! Vitae commodi inventore voluptas, illo tempore iusto fugiat minima nisi, fuga aliquid quisquam provident perspiciatis tempora veritatis ratione mollitia repudiandae cum consequatur illum perferendis corporis!
-                Reiciendis corporis nostrum itaque ut, possimus quam dignissimos eveniet consectetur accusamus, quod culpa. Officia iste adipisci est rem illum doloribus ex aperiam esse. Repellendus debitis ut, numquam tempore asperiores ipsam?</p>,
+                content: <p className="mt-[5px]">Mina é uma das mutantes mais visivelmente distintas de sua geração. Com pele rosa, olhos negros com pupilas amarelas, e chifres curvos, ela é impossível de passar despercebida — e, infelizmente, isso sempre a tornou um alvo fácil para preconceito. Enquanto muitos mutantes tentam esconder sua aparência, Mina escolheu o caminho contrário: abraçou quem é com cor, estilo e movimento.<br /><br />
+                Estudante do Colégio Horizonte, Mina é uma das líderes do animado e popular Clube de Dança, onde expressa sua identidade, combate o estigma contra mutantes e inspira outros jovens a se aceitarem. Sua dança é mais que arte — é resistência.</p>,
                 },
-                {
-                id: "aparencia",
-                title: "Aparência",
-                content: <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat nostrum maiores, quam assumenda alias expedita cumque labore quibusdam quod. Asperiores repellendus voluptatibus odio laborum dolorum culpa nam quisquam perspiciatis explicabo.
-                Doloremque, suscipit? Qui repellat, beatae, voluptas nostrum iure ab ut temporibus aspernatur placeat libero tempora iusto laborum architecto? Porro deleniti consectetur sint commodi laboriosam quam cupiditate cum pariatur ab rerum?
-                Repellendus rem ad, adipisci corporis unde neque dicta quae quibusdam nihil. Nemo omnis modi adipisci numquam nam neque a rem mollitia blanditiis provident autem laboriosam, libero cumque velit quo recusandae!
-                Sed incidunt commodi sit exercitationem sint assumenda aliquam odit dolorem asperiores recusandae tempora dicta, reiciendis dignissimos officia facere corporis aut, quibusdam illo. Quam, accusantium ad adipisci et doloremque placeat eos!</p>,
-                },
-                // Adicione mais seções conforme necessário, o último não precisa de virgula
+                // Personalidade
                 {
                     id: "personalidade",
                     title: "Personalidade",
-                    content: <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio et accusantium sint assumenda maxime, architecto quasi ratione veniam nemo inventore illo suscipit temporibus totam quod molestias dicta, repellat laboriosam pariatur?
-                    Quibusdam vitae dolorum commodi placeat, veniam ea odio maiores voluptatem tempora odit repudiandae, omnis quis eius quam enim est nesciunt illo rerum sed laboriosam aspernatur sunt. Eaque nemo assumenda in.
-                    Minus enim, vel dolore facilis ea modi ducimus eligendi maiores similique facere quidem tempore repudiandae esse id nesciunt, necessitatibus possimus, incidunt nisi. Minus minima quo consequuntur repellendus veniam quae dignissimos!
-                    Quo deserunt, dolore nulla vel consequuntur cupiditate facere voluptatum iure repellendus libero optio impedit consequatur, provident sit. Dolor aspernatur blanditiis harum libero, possimus neque esse obcaecati quisquam? In, tenetur inventore.</p>,
+                    content: <p className="mt-[5px]">Mina é alegre, extrovertida, vibrante e extremamente sociável. Está sempre cercada de amigos e dificilmente é vista sem um sorriso. Ama festas, encontros e agitação, e fica profundamente chateada quando é deixada de fora — ela precisa de conexão social como precisa de ar.<br /><br />
+                    Apesar da aparência descontraída e comportamento brincalhão, Mina tem um lado perfeccionista e intenso, especialmente no Clube de Dança. Quando está ensinando ou coreografando, adota uma postura séria e exigente, surpreendendo até os colegas mais próximos. Usa a dança como forma de expressão emocional e também como ferramenta de reconciliação: já foi capaz de unir colegas brigados apenas com um treino de coreografia.<br /><br />
+                    Por baixo da energia alegre, Mina carrega marcas emocionais do preconceito que sempre enfrentou — desde crianças rindo de seus chifres até adultos a evitando em locais públicos. Ela lida com isso com bom humor... mas não sem dor.</p>,
                 },
+                // Aparência
+                {
+                id: "aparencia",
+                title: "Aparência",
+                content: <p className="mt-[5px]">Mina é alegre, extrovertida, vibrante e extremamente sociável. Está sempre cercada de amigos e dificilmente é vista sem um sorriso. Ama festas, encontros e agitação, e fica profundamente chateada quando é deixada de fora — ela precisa de conexão social como precisa de ar.<br /><br />
+                Apesar da aparência descontraída e comportamento brincalhão, Mina tem um lado perfeccionista e intenso, especialmente no Clube de Dança. Quando está ensinando ou coreografando, adota uma postura séria e exigente, surpreendendo até os colegas mais próximos. Usa a dança como forma de expressão emocional e também como ferramenta de reconciliação: já foi capaz de unir colegas brigados apenas com um treino de coreografia.<br /><br />
+                Por baixo da energia alegre, Mina carrega marcas emocionais do preconceito que sempre enfrentou — desde crianças rindo de seus chifres até adultos a evitando em locais públicos. Ela lida com isso com bom humor... mas não sem dor.</p>,
+                },
+                // Habilidades
                 {
                     id: "habilidades",
                     title: "Habilidades",
-                    content: <p>Divertida</p>,
+                    content: <>
+                        <p className="mb-[5px] mt-[5px]">Mina Ashido Possui uma podera de fodase quirk emissor repecetor aqui estão as habilidades</p>
+                        <ul className="flex flex-col list-disc pl-[20px] gap-[10px]">
+                            <li>
+                                <p><strong>Ácido Corporal:</strong> Mina pode secretar um fluido corrosivo por sua pele, principalmente nas mãos e pés.</p>
+                            </li>
+                            <li>
+                                <p><strong>Controle de Viscosidade e Intensidade:</strong> consegue variar o ácido de acordo com a situação — pode derreter metal ou simplesmente tornar o chão escorregadio.</p>
+                            </li>
+                            <li>
+                                <p><strong>Resistência Natural:</strong> seu corpo é imune ao próprio ácido e a agentes químicos semelhantes.</p>
+                            </li>
+                        </ul>
+                    </>,
                 },
+                // Equipamentos
+                {
+                    id: "equipamentos",
+                    title: "Equipamentos",
+                    content: <ul className="mt-[5px] flex flex-col list-disc pl-[20px] gap-[10px]">
+                        <li><p>Tênis antiderrapantes especiais para dançar mesmo usando ácido</p></li>
+                        <li><p>Toalhas e garrafinhas com compostos neutralizantes (em caso de vazamento ácido)</p></li>
+                        <li><p>texto</p></li>
+                    </ul>,
+                },
+                // História
                 {
                     id: "historia",
                     title: "História",
-                    content: <p>Divertida</p>,
+                    content: <p className="mt-[5px]">Construção</p>,
+                },
+                // Relacionamentos
+                {
+                    id: "relacionamentos",
+                    title: "Relacionamentos",
+                    content: <p className="mt-[5px]">Construção</p>,
+                },
+                // Curiosidades
+                {
+                    id: "curiosidades",
+                    title: "Curiosidades",
+                    content: <ul className="mt-[5px] flex flex-col list-disc pl-[20px] gap-[10px]">
+                        <li><p>Sabe mais sobre relacionamentos dos colegas do que deveria (adora ships)</p></li>
+                        <li><p>Vive tentando ensinar Izuku a dançar — sem muito sucesso até agora.</p></li>
+                        <li><p>Tirou nota vermelha em matemática, mas passou fazendo um vídeo educativo em forma de coreografia.</p></li>
+                        <li><p>texto</p></li>
+                    </ul>,
                 }
             ]}
         />

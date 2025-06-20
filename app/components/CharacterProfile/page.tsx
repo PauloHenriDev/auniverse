@@ -116,10 +116,10 @@ const CharacterProfile: React.FC<CharacterProfileProps> = ({
           </div>
 
           {/* Quote */}
-          <div className="flex flex-col w-full md:w-[60%] p-[20px] bg-[#3E526E] border-l-[5px] border-[#EBD6FB] gap-[10px] italic text-white">
+          <div className="flex flex-col w-full md:w-[60%] p-[20px] bg-[#3E526E] border-l-[5px] border-[#EBD6FB] gap-[10px] italic text-white break-words">
             <p>"{quote}"</p>
             <div className="flex justify-end">
-              <p>— {quoteSource}</p>
+              <p className="break-words whitespace-normal text-right max-w-full">— {quoteSource}</p>
             </div>
           </div>
 
