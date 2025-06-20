@@ -7,7 +7,6 @@ import IzukuMidoriyaImage from "../../../public/izukuMidoriyaImage1.jpg";
 export default function MinaAshido() {
   return (
     <div>
-        <Header />
         <CharacterProfile
             name="Mina Ashido"
             alias="Pinky"
