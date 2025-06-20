@@ -9,21 +9,21 @@ export default function IzukuMidoriya() {
   return (
     <div>
       <Header />
-      <main className="flex flex-col sm:flex-row flex-wrap w-full bg-[#FEEBF6]">
+      <main className="flex flex-col sm:flex-row flex-wrap w-full bg-[#1B1A21]">
         {/* Bloco 1 */}
         <div className="w-full sm:w-1/2 lg:w-1/5 p-[20px]">
           {/* Side Info */}
-          <div className="border border-black rounded-t-[20px] rounded-b-[10px]">
-            <div className="flex bg-red-500 h-[40px] justify-center items-center rounded-t-[20px] border-b border-black">
+          <div className="border-[12px]-[#1B1A21] rounded-t-[20px] rounded-b-[10px]">
+            <div className="flex bg-[#82888A] h-[40px] justify-center items-center rounded-t-[20px] border-b border-black">
               <p className="text-[25px]">Izuku Midoriya</p>
             </div>
             <div className="flex h-[250px] justify-center items-center">
               <Image src={PoseidonImage} alt="" className="object-cover w-full h-full" />
             </div>
-            <div className="bg-[#FCD8CD]">
-              <p className="flex bg-red-500 h-[35px] justify-center items-center">Identidade</p>
+            <div className="bg-[#1B1A21]">
+              <p className="flex bg-[#34343B] h-[35px] justify-center items-center text-white">Identidade</p>
 
-              <div className="flex w-[100%]">
+              <div className="flex w-[100%] text-white">
                 <div className="flex w-[50%] justify-center">
                   <p>Nome Completo:</p>
                 </div>
@@ -32,7 +32,7 @@ export default function IzukuMidoriya() {
                 </div>
               </div>
 
-              <div className="flex w-[100%]">
+              <div className="flex w-[100%] text-white">
                 <div className="flex w-[50%] justify-center">
                   <p>Alias:</p>
                 </div>
@@ -41,7 +41,7 @@ export default function IzukuMidoriya() {
                 </div>
               </div>
 
-              <div className="flex w-[100%]">
+              <div className="flex w-[100%] text-white">
                 <div className="flex w-[50%] justify-center">
                   <p>Idade:</p>
                 </div>
@@ -50,7 +50,7 @@ export default function IzukuMidoriya() {
                 </div>
               </div>
 
-              <div className="flex w-[100%]">
+              <div className="flex w-[100%] text-white">
                 <div className="flex w-[50%] justify-center">
                   <p>Data de Nascimento:</p>
                 </div>
@@ -59,7 +59,7 @@ export default function IzukuMidoriya() {
                 </div>
               </div>
 
-              <div className="flex w-[100%]">
+              <div className="flex w-[100%] text-white">
                 <div className="flex w-[50%] justify-center">
                   <p>Genêro</p>
                 </div>
@@ -68,7 +68,7 @@ export default function IzukuMidoriya() {
                 </div>
               </div>
 
-              <div className="flex w-[100%]">
+              <div className="flex w-[100%] text-white">
                 <div className="flex w-[50%] justify-center">
                   <p>Espécie</p>
                 </div>
@@ -77,7 +77,7 @@ export default function IzukuMidoriya() {
                 </div>
               </div>
 
-              <div className="flex w-[100%]">
+              <div className="flex w-[100%] text-white">
                 <div className="flex w-[50%] justify-center">
                   <p>Status Atual:</p>
                 </div>
@@ -86,7 +86,7 @@ export default function IzukuMidoriya() {
                 </div>
               </div>
 
-              <div className="flex w-[100%]">
+              <div className="flex w-[100%] text-white">
                 <div className="flex w-[50%] justify-center">
                   <p>Afiliação:</p>
                 </div>
@@ -95,9 +95,9 @@ export default function IzukuMidoriya() {
                 </div>
               </div>
 
-              <p className="flex bg-red-500 h-[35px] justify-center items-center">Aparência</p>
+              <p className="flex bg-[#34343B] text-white h-[35px] justify-center items-center">Aparência</p>
 
-              <div className="flex w-[100%]">
+              <div className="flex w-[100%] text-white">
                 <div className="flex w-[50%] justify-center">
                   <p>Tom de Pele:</p>
                 </div>
@@ -106,7 +106,7 @@ export default function IzukuMidoriya() {
                 </div>
               </div>
 
-              <div className="flex w-[100%]">
+              <div className="flex w-[100%] text-white">
                 <div className="flex w-[50%] justify-center">
                   <p>Cor dos Olhos:</p>
                 </div>
@@ -115,7 +115,7 @@ export default function IzukuMidoriya() {
                 </div>
               </div>
 
-              <div className="flex w-[100%]">
+              <div className="flex w-[100%] text-white">
                 <div className="flex w-[50%] justify-center">
                   <p>Tom de Pele:</p>
                 </div>
@@ -124,9 +124,9 @@ export default function IzukuMidoriya() {
                 </div>
               </div>
 
-              <p className="flex bg-red-500 h-[35px] justify-center items-center">Relacionados</p>
+              <p className="flex bg-[#34343B] text-white h-[35px] justify-center items-center">Relacionados</p>
 
-              <div className="flex w-[100%]">
+              <div className="flex w-[100%] text-white">
                 <div className="flex w-[50%] justify-center">
                   <p>Tom de Pele:</p>
                 </div>
@@ -142,21 +142,21 @@ export default function IzukuMidoriya() {
 
         {/* Bloco 2 */}
         <div className="flex w-full sm:w-1/2 lg:w-4/5 p-[20px] justify-center">
-          <div className="flex flex-col rounded-[10px] bg-white w-[80%] p-[20px] gap-[40px]">
+          <div className="flex flex-col rounded-[10px] bg-[#979B9E] w-[80%] p-[20px] gap-[40px]">
             <div className="flex flex-col gap-[20px]">
               <h1 className="text-[40px]">Izuku Midoriya</h1>
-              <div className="flex gap-[10px] border-b border-gray">
+              <div className="flex gap-[10px] border-b-[4px] border-[#3E526E]">
                 {["Visão geral", "Galeria", "Relacionamentos", "Aparição"].map((label, index) => (
                   <button
                     key={index}
-                    className="relative px-4 py-2 text-black after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#EBD6FB] after:transition-all after:duration-300 hover:after:w-full"
+                    className="relative px-4 py-2 text-black after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#3E526E] after:transition-all after:duration-300 hover:after:w-full"
                   >
                     {label}
                   </button>
                 ))}
               </div>
             </div>
-            <div className="flex flex-col w-[60%] p-[20px] bg-[#FEEBF6] border-l-[5px] border-[#EBD6FB] gap-[10px] italic">
+            <div className="flex flex-col w-[60%] p-[20px] bg-[#3E526E] border-l-[5px] border-[#EBD6FB] gap-[10px] italic text-white">
               <div>
                 <p>"Não estou aqui para fazer amigos. Estou aqui para mudar o mundo, mesmo que tenha que queimá-lo primeiro."</p>
               </div>
