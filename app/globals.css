@@ -8,6 +8,86 @@
     box-sizing: border-box;
 }
 
+/* Tema claro por padrão */
+:root { 
+    --bg-main: #D0D7D7;
+    --bg-content: #E9EAEC;
+    --text-main: #000;
+    --text-sidebar: #000;
+    --sidebar-title: #788E9C;
+    --sidebar-title-border: #788E9C;
+    --info-block-title: #E9EAEC;
+    --info-block-content: #D0D7D7;
+    --quote-bg: #D8DEDE;
+    --quote-text: #000;
+    --quote-border: #788E9C;
+}
+
+/* Tema escuro */
+.dark { 
+    --bg-main: #1B1A21;
+    --bg-content: #979B9E;
+    --text-main: #000;
+    --text-sidebar: #fff;
+    --sidebar-title: #E9EAEC;
+    --sidebar-title-border: #E9EAEC;
+    --info-block-title: #34343B;
+    --info-block-content: #1B1A21;
+    --quote-bg: #3E526E;
+    --quote-text: #fff;
+    --quote-border: #EBD6FB;
+}
+
 body {
     @apply bg-white text-black;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@layer utilities {
+  .bg-main {
+    background-color: var(--bg-main);
+  }
+
+  .bg-content {
+    background-color: var(--bg-content);
+  }
+
+  .text-main {
+    color: var(--text-main);
+  }
+
+  .text-sidebar {
+    color: var(--text-sidebar);
+  }
+
+  .sidebar-title{
+    background-color: var(--sidebar-title);
+  }
+
+  .sidebar-title-border{
+    border-color: var(--sidebar-title-border);
+  }
+
+  .info-title {
+    background-color: var(--info-block-title);
+  }
+
+  .info-content {
+    background-color: var(--info-block-content);
+  }
+
+  .quote-bg {
+    background-color: var(--quote-bg);
+  }
+
+  .quote-text {
+    color: var(--quote-text);
+  }
+
+  .quote-border {
+    border-color: var(--quote-border);
+  }
+
 }

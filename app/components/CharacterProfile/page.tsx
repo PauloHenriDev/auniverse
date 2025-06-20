@@ -1,14 +1,8 @@
-/*
-  Componente reutilizável para ficha de personagem
-  - Permite ancoragem via botões (scroll para seções)
-  - Responsivo
-  - Tailwind para estilização
-*/
-
 "use client";
 
 import Image from "next/image";
 import React from "react";
+import '../../globals.css'
 
 type InfoPair = { label: string; value: string };
 
@@ -49,11 +43,11 @@ const CharacterProfile: React.FC<CharacterProfileProps> = ({
 }) => {
   const infoBlock = (title: string, data: InfoPair[]) => (
     <>
-      <p className="flex bg-[#34343B] text-white h-[35px] justify-center items-center">
+      <p className="flex info-title text-sidebar h-[35px] justify-center items-center">
         {title}
       </p>
       {data.map((pair, i) => (
-        <div key={i} className="flex w-full text-white">
+        <div key={i} className="flex w-full text-sidebar ">
           <div className="w-1/2 text-center">
             <p>{pair.label}</p>
           </div>
@@ -66,17 +60,17 @@ const CharacterProfile: React.FC<CharacterProfileProps> = ({
   );
 
   return (
-    <main className="flex flex-col sm:flex-row flex-wrap w-full bg-[#1B1A21]">
+    <main className="flex flex-col sm:flex-row flex-wrap w-full bg-main transition-colors duration-300">
       {/* Sidebar */}
       <div className="w-full sm:w-1/2 lg:w-1/5 p-[20px]">
-        <div className="border-[3px] border-[#82888A] rounded-t-[24px] rounded-b-[10px]">
-          <div className="flex bg-[#82888A] h-[40px] justify-center items-center rounded-t-[20px] border-b border-black">
+        <div className="border-[3px] sidebar-title-border rounded-t-[24px] rounded-b-[10px]">
+          <div className="flex sidebar-title h-[40px] justify-center items-center rounded-t-[20px] border-b border-black">
             <p className="text-[25px]">{name}</p>
           </div>
           <div className="flex h-[250px] justify-center items-center">
             <Image src={image} alt="Imagem do personagem" className="object-cover w-full h-full" />
           </div>
-          <div className="flex flex-col gap-[8px] bg-[#1B1A21]">
+          <div className="flex flex-col gap-[8px] info-content">
             {infoBlock("Identidade", [
               { label: "Nome Completo:", value: name },
               { label: "Alias:", value: alias },
@@ -98,7 +92,7 @@ const CharacterProfile: React.FC<CharacterProfileProps> = ({
 
       {/* Main Content */}
       <div className="flex w-full sm:w-1/2 lg:w-4/5 p-[20px] justify-center">
-        <div className="flex flex-col rounded-[10px] bg-[#979B9E] w-[80%] p-[20px] gap-[40px]">
+        <div className="flex flex-col rounded-[10px] bg-content w-[80%] p-[20px] gap-[40px]">
           {/* Header */}
           <div className="flex flex-col gap-[20px]">
             <h1 className="text-[40px]">{name}</h1>
@@ -116,7 +110,7 @@ const CharacterProfile: React.FC<CharacterProfileProps> = ({
           </div>
 
           {/* Quote */}
-          <div className="flex flex-col w-full md:w-[60%] p-[20px] bg-[#3E526E] border-l-[5px] border-[#EBD6FB] gap-[10px] italic text-white break-words">
+          <div className="flex flex-col w-full md:w-[60%] p-[20px] quote-bg border-l-[5px] quote-border gap-[10px] italic quote-text break-words">
             <p>"{quote}"</p>
             <div className="flex justify-end">
               <p className="break-words whitespace-normal text-right max-w-full">— {quoteSource}</p>
