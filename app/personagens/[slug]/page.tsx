@@ -1,19 +1,35 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { useRouter, useParams } from 'next/navigation'
+import { useParams } from 'next/navigation'
 import { createClient } from '@supabase/supabase-js'
-import CharacterProfile from '../../../components/CharacterProfile/page'
+import CharacterProfile from '../../components/CharacterProfile/page' // ajuste o caminho conforme seu projeto
 
 const supabaseUrl = 'https://seu-projeto.supabase.co'
-const supabaseKey = 'public-anon-key' // usar anon key do projeto (não use keys secretas no client)
+const supabaseKey = 'public-anon-key'
 const supabase = createClient(supabaseUrl, supabaseKey)
+
+interface Character {
+  name: string
+  alias: string
+  age: number
+  birthday: string
+  gender: string
+  species: string
+  status: string
+  affiliation: string
+  skinTone: string
+  eyeColor: string
+  image: string
+  quote: string
+  quoteSource: string
+}
 
 export default function PersonagemPage() {
   const params = useParams()
-  const slug = params.slug
+  const slug = params.slug as string
 
-  const [character, setCharacter] = useState(null)
+  const [character, setCharacter] = useState<Character | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -32,7 +48,7 @@ export default function PersonagemPage() {
       setLoading(false)
     }
 
-    fetchCharacter()
+    if (slug) fetchCharacter()
   }, [slug])
 
   if (loading) return <p>Carregando...</p>
@@ -49,10 +65,10 @@ export default function PersonagemPage() {
       status={character.status}
       affiliation={character.affiliation}
       appearance={{ skinTone: character.skinTone, eyeColor: character.eyeColor }}
-      image={character.image} // Aqui: idealmente você salvaria URL da imagem no banco
+      image={character.image}
       quote={character.quote}
       quoteSource={character.quoteSource}
-      sections={[] /* Você pode adaptar aqui para puxar seções do banco, ou deixar fixo */}
+      sections={[]} 
     />
   )
 }
