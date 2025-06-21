@@ -30,4 +30,5 @@ model Character {
   eyeColor     String
   quote        String
   quoteSource  String
+  image        String
 }

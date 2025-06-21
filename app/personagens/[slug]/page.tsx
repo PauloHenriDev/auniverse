@@ -5,8 +5,8 @@ import { useParams } from 'next/navigation'
 import { createClient } from '@supabase/supabase-js'
 import CharacterProfile from '../../components/CharacterProfile/page' // ajuste o caminho conforme seu projeto
 
-const supabaseUrl = 'https://seu-projeto.supabase.co'
-const supabaseKey = 'public-anon-key'
+const supabaseUrl = 'https://aalqjfhxboweuoxgwmiz.supabase.co'
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFhbHFqZmh4Ym93ZXVveGd3bWl6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTA0NzY5NDUsImV4cCI6MjA2NjA1Mjk0NX0.ZcYPIPXfhO0ROGEvEqHY4INR5BKnKomxuhalxBoEWcc'
 const supabase = createClient(supabaseUrl, supabaseKey)
 
 interface Character {
@@ -33,12 +33,15 @@ export default function PersonagemPage() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    // console.log("Slug recebido:", slug); 
     async function fetchCharacter() {
       const { data, error } = await supabase
         .from('Character')
         .select('*')
         .eq('slug', slug)
         .single()
+
+        // console.log({ data, error });
 
       if (error) {
         console.error(error)
