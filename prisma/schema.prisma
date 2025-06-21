@@ -17,6 +17,7 @@ datasource db {
 
 model Character {
   id           String   @id @default(uuid())
+  slug         String   @unique
   name         String
   alias        String
   age          Int
