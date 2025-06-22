@@ -5,8 +5,8 @@ import { useParams } from 'next/navigation';
 import { createClient } from '@supabase/supabase-js';
 import CharacterProfile from '../../components/CharacterProfile'; // ajuste o caminho se necessário
 
-const supabaseUrl = 'https://aalqjfhxboweuoxgwmiz.supabase.co';
-const supabaseKey = 'supabasekey';
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 interface Character {
