@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { createClient } from '@supabase/supabase-js';
-import CharacterProfile from '../../components/CharacterProfile/page'; // ajuste o caminho se necessário
+import CharacterProfile from '../../components/CharacterProfile'; // ajuste o caminho se necessário
 
 const supabaseUrl = 'https://aalqjfhxboweuoxgwmiz.supabase.co';
 const supabaseKey = 'supabasekey';

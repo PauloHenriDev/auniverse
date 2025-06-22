@@ -1,5 +1,5 @@
 import Header from "../../components/Header/page";
-import CharacterProfile from "../../components/CharacterProfile/page";
+import CharacterProfile from "../../components/CharacterProfile";
 
 import PoseidonImage from "../../../public/poseidonImage1.webp";
 import IzukuMidoriyaImage from "../../../public/izukuMidoriyaImage1.jpg";
