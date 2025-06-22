@@ -38,24 +38,23 @@ export default function PersonagemPage() {
   const [character, setCharacter] = useState<Character | null>(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    async function fetchCharacter() {
-      const { data, error } = await supabase
-        .from('Character')
-        .select('*')
-        .eq('slug', slug)
-        .single();
-
-      if (error) {
-        console.error(error);
-      } else {
-        setCharacter(data);
-      }
-      setLoading(false);
+useEffect(() => {
+  async function fetchCharacter() {
+    const { data, error } = await supabase
+      .from('Character')
+      .select('*')
+      .eq('slug', slug)
+      .single();
+    console.log('data:', data, 'error:', error);
+    if (error) {
+      console.error(error);
+    } else {
+      setCharacter(data);
     }
-
-    if (slug) fetchCharacter();
-  }, [slug]);
+    setLoading(false);
+  }
+  if (slug) fetchCharacter();
+}, [slug]);
 
   if (loading) return <p>Carregando...</p>;
   if (!character) return <p>Personagem não encontrado.</p>;
