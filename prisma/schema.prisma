@@ -31,4 +31,12 @@ model Character {
   quote        String
   quoteSource  String
   image        String
+
+  // Novos campos para conteúdo da página
+  overview      String?
+  appearance    String?
+  personality   String?
+  abilities     String?
+  relationships String?
+  trivia        String?
 }

@@ -1,61 +1,73 @@
-'use client'
+'use client';
 
-import { useEffect, useState } from 'react'
-import { useParams } from 'next/navigation'
-import { createClient } from '@supabase/supabase-js'
-import CharacterProfile from '../../components/CharacterProfile/page' // ajuste o caminho conforme seu projeto
+import { useEffect, useState } from 'react';
+import { useParams } from 'next/navigation';
+import { createClient } from '@supabase/supabase-js';
+import CharacterProfile from '../../components/CharacterProfile/page'; // ajuste o caminho se necessário
 
-const supabaseUrl = 'https://aalqjfhxboweuoxgwmiz.supabase.co'
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFhbHFqZmh4Ym93ZXVveGd3bWl6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTA0NzY5NDUsImV4cCI6MjA2NjA1Mjk0NX0.ZcYPIPXfhO0ROGEvEqHY4INR5BKnKomxuhalxBoEWcc'
-const supabase = createClient(supabaseUrl, supabaseKey)
+const supabaseUrl = 'https://aalqjfhxboweuoxgwmiz.supabase.co';
+const supabaseKey = 'supabasekey';
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 interface Character {
-  name: string
-  alias: string
-  age: number
-  birthday: string
-  gender: string
-  species: string
-  status: string
-  affiliation: string
-  skinTone: string
-  eyeColor: string
-  image: string
-  quote: string
-  quoteSource: string
+  name: string;
+  alias: string;
+  age: number;
+  birthday: string;
+  gender: string;
+  species: string;
+  status: string;
+  affiliation: string;
+  skinTone: string;
+  eyeColor: string;
+  image: string;
+  quote: string;
+  quoteSource: string;
+  overview?: string;
+  appearance?: string;
+  personality?: string;
+  abilities?: string;
+  relationships?: string;
+  trivia?: string;
 }
 
 export default function PersonagemPage() {
-  const params = useParams()
-  const slug = params.slug as string
+  const params = useParams();
+  const slug = params.slug as string;
 
-  const [character, setCharacter] = useState<Character | null>(null)
-  const [loading, setLoading] = useState(true)
+  const [character, setCharacter] = useState<Character | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // console.log("Slug recebido:", slug); 
     async function fetchCharacter() {
       const { data, error } = await supabase
         .from('Character')
         .select('*')
         .eq('slug', slug)
-        .single()
-
-        // console.log({ data, error });
+        .single();
 
       if (error) {
-        console.error(error)
+        console.error(error);
       } else {
-        setCharacter(data)
+        setCharacter(data);
       }
-      setLoading(false)
+      setLoading(false);
     }
 
-    if (slug) fetchCharacter()
-  }, [slug])
+    if (slug) fetchCharacter();
+  }, [slug]);
 
-  if (loading) return <p>Carregando...</p>
-  if (!character) return <p>Personagem não encontrado.</p>
+  if (loading) return <p>Carregando...</p>;
+  if (!character) return <p>Personagem não encontrado.</p>;
+
+  const sections = [
+    { id: 'overview', title: 'Visão Geral', content: character.overview ?? 'Sem informação disponível.' },
+    { id: 'appearance', title: 'Aparência', content: character.appearance ?? 'Sem informação disponível.' },
+    { id: 'personality', title: 'Personalidade', content: character.personality ?? 'Sem informação disponível.' },
+    { id: 'abilities', title: 'Habilidades', content: character.abilities ?? 'Sem informação disponível.' },
+    { id: 'relationships', title: 'Relacionamentos', content: character.relationships ?? 'Sem informação disponível.' },
+    { id: 'trivia', title: 'Curiosidades', content: character.trivia ?? 'Sem informação disponível.' },
+  ];
 
   return (
     <CharacterProfile
@@ -71,7 +83,7 @@ export default function PersonagemPage() {
       image={character.image}
       quote={character.quote}
       quoteSource={character.quoteSource}
-      sections={[]} 
+      sections={sections}
     />
-  )
+  );
 }

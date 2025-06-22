@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React from "react";
-import '../../globals.css'
+import '../../globals.css';
 
 type InfoPair = { label: string; value: string };
 
@@ -15,14 +15,17 @@ interface CharacterProfileProps {
   species: string;
   status: string;
   affiliation: string;
-  appearance: { skinTone: string; eyeColor: string };
-  image: any;
+  appearance: {
+    skinTone: string;
+    eyeColor: string;
+  };
+  image: string;
   quote: string;
   quoteSource: string;
   sections: {
     id: string;
     title: string;
-    content: React.ReactNode;
+    content: string;
   }[];
 }
 
@@ -47,7 +50,7 @@ const CharacterProfile: React.FC<CharacterProfileProps> = ({
         {title}
       </p>
       {data.map((pair, i) => (
-        <div key={i} className="flex w-full text-sidebar ">
+        <div key={i} className="flex w-full text-sidebar">
           <div className="w-1/2 text-center">
             <p>{pair.label}</p>
           </div>
@@ -67,18 +70,24 @@ const CharacterProfile: React.FC<CharacterProfileProps> = ({
           <div className="flex sidebar-title h-[40px] justify-center items-center rounded-t-[20px] border-b border-black">
             <p className="text-[25px]">{name}</p>
           </div>
-          <div className="flex h-[250px] justify-center items-center">
-            <Image src={image} alt="Imagem do personagem" className="object-cover w-full h-full" />
+          <div className="flex h-[250px] justify-center items-center overflow-hidden">
+            <Image
+              src={image}
+              alt={`Imagem de ${name}`}
+              width={300}
+              height={300}
+              className="object-cover w-full h-full"
+            />
           </div>
           <div className="flex flex-col gap-[8px] info-content">
             {infoBlock("Identidade", [
               { label: "Nome Completo:", value: name },
               { label: "Alias:", value: alias },
               { label: "Idade:", value: `${age}` },
-              { label: "Data de Nascimento:", value: birthday },
-              { label: "Genêro", value: gender },
-              { label: "Espécie", value: species },
-              { label: "Status Atual:", value: status },
+              { label: "Nascimento:", value: birthday },
+              { label: "Gênero:", value: gender },
+              { label: "Espécie:", value: species },
+              { label: "Status:", value: status },
               { label: "Afiliação:", value: affiliation },
             ])}
 
@@ -90,10 +99,10 @@ const CharacterProfile: React.FC<CharacterProfileProps> = ({
         </div>
       </div>
 
-      {/* Main Content */}
+      {/* Conteúdo Principal */}
       <div className="flex w-full sm:w-1/2 lg:w-4/5 p-[20px] justify-center">
         <div className="flex flex-col rounded-[10px] bg-content w-[80%] p-[20px] gap-[40px]">
-          {/* Header */}
+          {/* Cabeçalho e Navegação */}
           <div className="flex flex-col gap-[20px]">
             <h1 className="text-[40px]">{name}</h1>
             <div className="flex gap-[10px] border-b-[1px] border-[#3E526E] flex-wrap">
@@ -109,20 +118,26 @@ const CharacterProfile: React.FC<CharacterProfileProps> = ({
             </div>
           </div>
 
-          {/* Quote */}
-          <div className="flex flex-col w-full md:w-[60%] p-[20px] quote-bg border-l-[5px] quote-border gap-[10px] italic quote-text break-words">
-            <p>"{quote}"</p>
-            <div className="flex justify-end">
-              <p className="break-words whitespace-normal text-right max-w-full">— {quoteSource}</p>
+          {/* Citação */}
+          {quote && (
+            <div className="flex flex-col w-full md:w-[60%] p-[20px] quote-bg border-l-[5px] quote-border gap-[10px] italic quote-text">
+              <p>"{quote}"</p>
+              <div className="flex justify-end">
+                <p>— {quoteSource}</p>
+              </div>
             </div>
-          </div>
+          )}
 
-          {/* Sections */}
+          {/* Seções */}
           {sections.map((section) => (
-            <div key={section.id} id={section.id} className="flex flex-col border-b-[1px] border-[#3E526E] pb-[40px] scroll-mt-[100px]">
+            <div
+              key={section.id}
+              id={section.id}
+              className="flex flex-col border-b-[1px] border-[#3E526E] pb-[40px] scroll-mt-[100px]"
+            >
               <div className="h-[6px] w-[40px] bg-[#3E526E] mb-[5px]"></div>
               <h2 className="text-[25px] w-fit">{section.title}</h2>
-              <div>{section.content}</div>
+              <div className="whitespace-pre-line">{section.content}</div>
             </div>
           ))}
         </div>
