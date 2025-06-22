@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import Header from './components/Header/page'
+import Header from './components/Header'
 import './globals.css'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
